@@ -5,7 +5,7 @@ import (
 	"sync"
 	"time"
 
-	limiter "github.com/WelcomerTeam/RealRock/v2/limiter"
+	limiter "github.com/WelcomerTeam/RealRock/limiter"
 )
 
 // ErrNoSuchBucket is when a Bucket was requested that does not exist.
