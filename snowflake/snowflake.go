@@ -15,9 +15,8 @@ import (
 )
 
 var (
-	// Epoch is set to the twitter snowflake epoch of Nov 04 2010 01:42:54 UTC in milliseconds
-	// You may customize this to set a different epoch for your application.
-	Epoch int64 = 1288834974657
+	// Epoch is set to the discord snowflake epoch of 01 Jan 2015 00:00:01 UTC in milliseconds
+	Epoch int64 = 1420070400000
 
 	// NodeBits holds the number of bits to use for Node
 	// Remember, you have a total 22 bits to share between Node/Step.
