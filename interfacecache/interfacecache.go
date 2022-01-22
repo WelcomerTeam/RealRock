@@ -7,7 +7,7 @@ import (
 	"go.uber.org/atomic"
 )
 
-type interfaceCache struct {
+type InterfaceCache struct {
 	resMu sync.Mutex
 	res   interface{}
 
@@ -17,13 +17,13 @@ type interfaceCache struct {
 // InterfaceCache allows for easy reuse of a specific interface value
 // for a specified duration of time. Does not reset the lastRequest when
 // a new request is made.
-func NewInterfaceCache() (ic *interfaceCache) {
-	return &interfaceCache{
+func NewInterfaceCache() (ic *InterfaceCache) {
+	return &InterfaceCache{
 		lastRequest: &atomic.Time{},
 	}
 }
 
-func (ic *interfaceCache) Result(dur time.Duration, getter func() interface{}) (res interface{}) {
+func (ic *InterfaceCache) Result(dur time.Duration, getter func() interface{}) (res interface{}) {
 	if now := time.Now().UTC(); ic.lastRequest.Load().Add(dur).Before(now) {
 		ic.resMu.Lock()
 		ic.res = getter()
