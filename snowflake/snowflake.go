@@ -10,7 +10,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/savsgio/gotils"
+	gotils "github.com/savsgio/gotils/strconv"
 	"golang.org/x/xerrors"
 )
 
